@@ -41,6 +41,7 @@
       align-items:center;
       padding-bottom:24px;
       border-bottom:1px solid rgba(255,255,255,0.1);
+      margin-bottom:32px;
     }
     .avatar{
       width:100px;
@@ -90,6 +91,25 @@
       transition:color 0.2s;
     }
     .contact-item a:hover{color:#93c5fd;}
+    .learning-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(96,165,250,0.15);
+      color:var(--accent);
+      padding:8px 16px;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:14px;
+      border:1px solid rgba(96,165,250,0.3);
+      transition:all 0.2s;
+      margin-top:12px;
+    }
+    .learning-link:hover{
+      background:rgba(96,165,250,0.25);
+      border-color:rgba(96,165,250,0.5);
+      transform:translateY(-2px);
+    }
     .section{margin-top:32px;}
     .section-title{
       font-size:20px;
@@ -174,7 +194,6 @@
       border-left:3px solid var(--accent);
       padding:16px;
       border-radius:6px;
-      margin-bottom:20px;
     }
     .cert-badge{
       display:inline-flex;
@@ -222,10 +241,13 @@
           <div class="contact-item">📞 +1 (551) 236-9992</div>
           <div class="contact-item">💼 <a href="https://www.linkedin.com/in/aishwarya-gr/" target="_blank">LinkedIn Profile</a></div>
         </div>
+        <a href="https://github.com/graishwarya/Learning" target="_blank" class="learning-link">
+          📚 My Learning Journey
+        </a>
       </div>
     </header>
 
-    <section class="section">
+    <section class="section" style="margin-top:0;">
       <div class="summary-box">
         <strong>What makes me different:</strong> I've been in the code, handled production crises, and understand technical debt. I speak both languages fluently — business strategy and technical architecture. I transform user pain points into prioritized backlogs and coordinate across architects, developers, QA, and stakeholders to deliver what's actually possible.
       </div>
