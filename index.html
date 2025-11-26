@@ -17,6 +17,7 @@
     *{box-sizing:border-box;}
     html,body{height:100%;margin:0;padding:0;}
     body{
+      min-height: 100vh;
       font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
       background:var(--bg);
       color:var(--white);
@@ -24,24 +25,34 @@
       padding:20px;
       display:flex;
       justify-content:center;
+      align-items:start;
       line-height:1.6;
     }
     .page{
       width:100%;
+      min-height:90vh;
       max-width:var(--max-width);
-      border:1px solid rgba(255,255,255,0.08);
-      padding:40px;
+      padding:40px 40px 20px;
       border-radius:12px;
       background:linear-gradient(180deg, rgba(15,23,32,0.95), rgba(11,11,13,0.98));
       box-shadow:0 20px 60px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 1;
+    }
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 2px solid rgba(255,255,255,0.13);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 2;
     }
     header{
       display:flex;
       gap:24px;
       align-items:center;
       padding-bottom:24px;
-      border-bottom:1px solid rgba(255,255,255,0.1);
-      margin-bottom:32px;
     }
     .avatar{
       width:100px;
@@ -109,6 +120,15 @@
       background:rgba(96,165,250,0.25);
       border-color:rgba(96,165,250,0.5);
       transform:translateY(-2px);
+    }
+    .header-divider{
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      padding-bottom:24px;
+      margin-bottom:32px;
+      margin-left:-40px;
+      margin-right:-40px;
+      padding-left:40px;
+      padding-right:40px;
     }
     .section{margin-top:32px;}
     .section-title{
@@ -230,32 +250,34 @@
 </head>
 <body>
   <div class="page">
-    <header>
-      <div class="avatar">AG</div>
-      <div class="header-info">
-        <h1>Aishwarya Gunarajan</h1>
-        <div class="tagline">Technical Product Owner | Bridging Business & Engineering | Delivering Solutions with 14+ Years in Banking & Insurance</div>
-        <div class="contact-bar">
-          <div class="contact-item">📍 Ball Ground, Georgia</div>
-          <div class="contact-item">📧 <a href="mailto:gunarajan.aishwarya@gmail.com">gunarajan.aishwarya@gmail.com</a></div>
-          <div class="contact-item">📞 +1 (551) 236-9992</div>
-          <div class="contact-item">💼 <a href="https://www.linkedin.com/in/aishwarya-gr/" target="_blank">LinkedIn Profile</a></div>
+    <div class="header-divider">
+      <header>
+        <div class="avatar">AG</div>
+        <div class="header-info">
+          <h1>Aishwarya Gunarajan</h1>
+          <div class="tagline">Technical Product Owner | Bridging Business & Engineering | Delivering Solutions with 14+ Years in Banking & Insurance</div>
+          <div class="contact-bar">
+            <div class="contact-item">📍 Ball Ground, Georgia</div>
+            <div class="contact-item">📧 <a href="mailto:gunarajan.aishwarya@gmail.com">gunarajan.aishwarya@gmail.com</a></div>
+            <div class="contact-item">📞 +1 (551) 236-9992</div>
+            <div class="contact-item">💼 <a href="https://www.linkedin.com/in/aishwarya-gr/" target="_blank">LinkedIn Profile</a></div>
+          </div>
+          <a href="https://github.com/graishwarya/Learning" target="_blank" class="learning-link">
+            📚 My Learning Journey
+          </a>
         </div>
-        <a href="https://github.com/graishwarya/Learning" target="_blank" class="learning-link">
-          📚 My Learning Journey
-        </a>
-      </div>
-    </header>
+      </header>
 
-    <section class="section" style="margin-top:0;">
-      <div class="summary-box">
-        <strong>What makes me different:</strong> I've been in the code, handled production crises, and understand technical debt. I speak both languages fluently — business strategy and technical architecture. I transform user pain points into prioritized backlogs and coordinate across architects, developers, QA, and stakeholders to deliver what's actually possible.
-      </div>
-      
       <div style="margin-top:16px;">
         <span class="cert-badge">🎓 CSPO Certified</span>
         <span class="cert-badge">🎓 SAFe Agile Practitioner</span>
         <span class="cert-badge">☁️ AWS on Light Sail</span>
+      </div>
+    </div>
+
+    <section class="section" style="margin-top:0;">
+      <div class="summary-box">
+        <strong>What is different:</strong> I've been in the code, handled production crises, and understand technical debt. I speak both languages fluently — business strategy and technical architecture. I transform user pain points into prioritized backlogs and coordinate across architects, developers, QA, and stakeholders to deliver what's actually possible.
       </div>
     </section>
 
